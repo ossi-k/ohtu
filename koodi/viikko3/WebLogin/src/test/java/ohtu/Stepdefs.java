@@ -25,12 +25,7 @@ public class Stepdefs {
     
     @When("correct username {string} and password {string} are given")
     public void correctUsernameAndPasswordAreGiven(String username, String password) {
-        WebElement element = driver.findElement(By.name("username"));
-        element.sendKeys(username);
-        element = driver.findElement(By.name("password"));
-        element.sendKeys(password);
-        element = driver.findElement(By.name("login"));
-        element.submit(); 
+        logInWith(username, password);
     }    
     
     @Then("user is logged in")
