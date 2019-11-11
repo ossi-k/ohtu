@@ -1,7 +1,6 @@
 package ohtu;
 
-import ohtu.verkkokauppa.Kauppa;
-import ohtu.verkkokauppa.Kirjanpito;
+import ohtu.verkkokauppa.*;
 
 public class Main {
 
