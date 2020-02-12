@@ -3,6 +3,9 @@ package ohtu;
 
 public class Player {
     private String name;
+    private String team;
+    private int goals;
+    private int assists;
 
     public void setName(String name) {
         this.name = name;
@@ -14,7 +17,7 @@ public class Player {
 
     @Override
     public String toString() {
-        return name;
+        return name + " team " + team + " goals " + goals + " assists " + assists;
     }
       
 }
