@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="As a user I want to be able to set the counter to value zero" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-02-13T16:45:11" hostname="DESKTOP-8O96HQ1" time="0.001">
+<testsuite name="As a user I want to be able to set the counter to value zero" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-02-13T16:51:40" hostname="DESKTOP-8O96HQ1" time="0.001">
   <properties/>
-  <testcase name="Resetting after one increment" classname="As a user I want to be able to set the counter to value zero" time="0.0"/>
+  <testcase name="Resetting after one increment" classname="As a user I want to be able to set the counter to value zero" time="0.001"/>
   <testcase name="Resetting after incrementing with several values" classname="As a user I want to be able to set the counter to value zero" time="0.0"/>
   <system-out><![CDATA[
 Feature: As a user I want to be able to set the counter to value zero

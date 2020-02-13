@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="As a user I want to be able to increase the counter value" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-02-13T16:45:11" hostname="DESKTOP-8O96HQ1" time="0.006">
+<testsuite name="As a user I want to be able to increase the counter value" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-02-13T16:51:40" hostname="DESKTOP-8O96HQ1" time="0.006">
   <properties/>
   <testcase name="Increment once" classname="As a user I want to be able to increase the counter value" time="0.005"/>
   <testcase name="Increment by many" classname="As a user I want to be able to increase the counter value" time="0.001"/>
