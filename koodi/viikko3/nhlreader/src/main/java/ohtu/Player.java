@@ -3,7 +3,7 @@ package ohtu;
 
 import java.util.Comparator;
 
-public class Player implements Comparator<Player>{
+public class Player {
     private String name;
     private String team;
     private String nationality;
@@ -43,16 +43,5 @@ public class Player implements Comparator<Player>{
     @Override
     public String toString() {
         return name + " " + nationality + " team " + team + " goals " + goals + " assists " + assists;
-    }
-    
-    @Override
-    public int compare(Player a, Player b) {
-        int returnValue = 0;
-        if (a.goals < b.goals) {
-            returnValue = -1;
-        } else {
-            returnValue = 1;
-        }
-        return returnValue;
     }
 }
