@@ -43,6 +43,6 @@ public class Stepdefs {
     @Then("system will respond with {string}")
     public void systemWillRespondWith(String expectedOutput) {
         assertTrue(io.getPrints().contains(expectedOutput));
-    }    
+    }
 
 }
