@@ -38,9 +38,46 @@ public class AuthenticationService {
         return true;
     }
 
-    private boolean invalid(String username, String password) {
+    public boolean invalid(String username, String password) {
         // validity check of username and password
+        boolean notOnlyLettersPassword = true;
+        boolean notOnlyLettersUsername = true;
+        char[] passwordArray = password.toCharArray();
+        char[] usernameArray = username.toCharArray();
 
+        for (int i = 0; i < passwordArray.length; i++) {
+            if (!(Character.isLetter(passwordArray[i]))) {
+                notOnlyLettersPassword = true;
+                break;
+            }
+        }
+
+        for (int i = 0; i < usernameArray.length; i++) {
+            if (!(Character.isLetter(usernameArray[i]))) {
+                notOnlyLettersUsername = true;
+                break;
+            }
+        }
+
+        if (userDao.findByName(username) != null) {
+            return true;
+        }
+
+        if (passwordArray.length < 8) {
+            return true;
+        }
+        
+        if (usernameArray.length < 3) {
+            return true;
+        }
+
+        if (!notOnlyLettersPassword) {
+            return true;
+        }
+
+        if (!notOnlyLettersUsername) {
+            return true;
+        }
         return false;
     }
 }
