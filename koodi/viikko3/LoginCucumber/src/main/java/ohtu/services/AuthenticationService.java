@@ -40,21 +40,21 @@ public class AuthenticationService {
 
     public boolean invalid(String username, String password) {
         // validity check of username and password
-        boolean notOnlyLettersPassword = true;
-        boolean notOnlyLettersUsername = true;
+        boolean onlyLettersPassword = true;
+        boolean onlyLettersUsername = true;
         char[] passwordArray = password.toCharArray();
         char[] usernameArray = username.toCharArray();
 
         for (int i = 0; i < passwordArray.length; i++) {
             if (!(Character.isLetter(passwordArray[i]))) {
-                notOnlyLettersPassword = true;
+                onlyLettersPassword = false;
                 break;
             }
         }
 
         for (int i = 0; i < usernameArray.length; i++) {
             if (!(Character.isLetter(usernameArray[i]))) {
-                notOnlyLettersUsername = true;
+                onlyLettersUsername = false;
                 break;
             }
         }
@@ -71,11 +71,11 @@ public class AuthenticationService {
             return true;
         }
 
-        if (!notOnlyLettersPassword) {
+        if (onlyLettersPassword) {
             return true;
         }
 
-        if (!notOnlyLettersUsername) {
+        if (!onlyLettersUsername) {
             return true;
         }
         return false;
