@@ -27,9 +27,6 @@ Feature: A new user account can be created if a proper unused username and passw
         When  username "uusi" and password "auto5" are entered
         Then  system will respond with "new user not registered"
 
-    Scenario: can login with successfully generated account
-        Given user "eero" with password "salainen1" is created and   command login is selected
-        When  username "eero" and password "salainen1" are entered
-        Then  system will respond with "logged in"  
+
 
 
