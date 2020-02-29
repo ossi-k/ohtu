@@ -38,7 +38,7 @@ public class KauppaTest {
         k.tilimaksu("pekka", "12345");
 
         // sitten suoritetaan varmistus, että pankin metodia tilisiirto on kutsuttu
-        verify(pankki).tilisiirto(eq("pekka"), anyInt(), eq("12345"), anyString(), anyInt());
+        verify(pankki).tilisiirto(eq("pekka"), anyInt(), eq("12345"), anyString(), eq(5));
         // toistaiseksi ei välitetty kutsussa käytetyistä parametreista
     }
 
@@ -57,7 +57,7 @@ public class KauppaTest {
         k.lisaaKoriin(1); 
         k.lisaaKoriin(2);
         k.tilimaksu("pekka", "12345");
-        verify(pankki).tilisiirto(eq("pekka"), anyInt(), eq("12345"), anyString(), anyInt());
+        verify(pankki).tilisiirto(eq("pekka"), anyInt(), eq("12345"), anyString(), eq(15));
         
     }
 }
