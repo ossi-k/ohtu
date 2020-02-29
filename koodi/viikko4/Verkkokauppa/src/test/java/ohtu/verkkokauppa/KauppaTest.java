@@ -44,20 +44,34 @@ public class KauppaTest {
 
     @Test
     public void ostetaanKaksiEriTuotetta() {
-        
+
         when(varasto.saldo(1)).thenReturn(10);
         when(varasto.saldo(2)).thenReturn(10);
-        
+
         Kauppa k = new Kauppa(varasto, pankki, viite);
-        
+
         when(varasto.haeTuote(1)).thenReturn(new Tuote(1, "omenamehu", 5));
         when(varasto.haeTuote(2)).thenReturn(new Tuote(2, "kalja", 10));
-        
+
         k.aloitaAsiointi();
-        k.lisaaKoriin(1); 
+        k.lisaaKoriin(1);
         k.lisaaKoriin(2);
         k.tilimaksu("pekka", "12345");
         verify(pankki).tilisiirto(eq("pekka"), anyInt(), eq("12345"), anyString(), eq(15));
-        
+
+    }
+
+    @Test
+    public void ostetaanKaksiSamaaTuotetta() {
+        when(varasto.saldo(1)).thenReturn(10);
+        Kauppa k = new Kauppa(varasto, pankki, viite);
+        when(varasto.haeTuote(1)).thenReturn(new Tuote(1, "kananmuna", 2));
+
+        k.aloitaAsiointi();
+        k.lisaaKoriin(1);
+        k.lisaaKoriin(1);
+        k.tilimaksu("pekka", "12345");
+        verify(pankki).tilisiirto(eq("pekka"), anyInt(), eq("12345"), anyString(), eq(4));
+
     }
 }
