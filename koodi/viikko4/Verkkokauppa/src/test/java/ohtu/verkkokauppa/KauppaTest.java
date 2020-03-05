@@ -11,6 +11,7 @@ public class KauppaTest {
     Pankki pankki;
     Varasto varasto;
     Viitegeneraattori viite;
+    Ostoskori ostoskori;
 
     @Before
     public void setUp() {
@@ -21,6 +22,7 @@ public class KauppaTest {
         when(viite.uusi()).thenReturn(42);
 
         varasto = mock(Varasto.class);
+        ostoskori = mock(Ostoskori.class);
     }
 
     @Test
@@ -66,8 +68,9 @@ public class KauppaTest {
         when(varasto.saldo(1)).thenReturn(10);
         Kauppa k = new Kauppa(varasto, pankki, viite);
         when(varasto.haeTuote(1)).thenReturn(new Tuote(1, "kananmuna", 2));
-
+        
         k.aloitaAsiointi();
+        
         k.lisaaKoriin(1);
         k.lisaaKoriin(1);
         k.tilimaksu("pekka", "12345");
